@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>StudyBoost | Tu espacio de estudio</title>
+
+    <meta name="description" content="Organiza tus tareas, estudia con concentración y mejora tus hábitos académicos.">
+
+    <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+    <div class="agrupar">
+
+        <header class="header">
+            <div class="marca">
+                <div class="logo">S</div>
+                <div>
+                    <h1>StudyBoost</h1>
+                    <p>Tu aprendizaje, paso a paso.</p>
+                </div>
+            </div>
+        </header>
+
+        <nav class="menu">
+            <ul class="btn">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#tareas">Mis tareas</a></li>
+                <li><a href="#apuntes">Mis apuntes</a></li>
+                <li><a href="#concentracion">Concentración</a></li>
+                <li><a href="#progreso">Mi progreso</a></li>
+                <li><a href="#matematicas">Aprender matemáticas</a></li>
+            </ul>
+        </nav>
+
+        <main class="contenido">
+
+            <section class="seccion" id="inicio">
+
+                <div class="bienvenida">
+                    <p class="etiqueta">TU ESPACIO DE APRENDIZAJE</p>
+                    <h2>¡Hola, estudiante!</h2>
+                    <p>
+                        Organiza tu tiempo, fortalece tus hábitos
+                        y alcanza tus objetivos académicos.
+                    </p>
+                    <a class="boton" href="#tareas">
+                        Organizar mi estudio
+                    </a>
+
+                </div>
+                <div class="racha-estudio">
+                    <div class="racha-encabezado">
+                        <span id="iconoRacha">🔥</span>
+                        <div>
+                            <h3><span id="diasRacha">0</span> días de racha</h3>
+                            <p id="mensajeRacha">¡Empieza hoy tu racha de estudio!</p>
+                        </div>
+                    </div>
+
+                    <div class="racha-semana" id="rachaSemana">
+                        <div class="dia-racha"><span>L</span><span>○</span></div>
+                        <div class="dia-racha"><span>M</span><span>○</span></div>
+                        <div class="dia-racha"><span>M</span><span>○</span></div>
+                        <div class="dia-racha"><span>J</span><span>○</span></div>
+                        <div class="dia-racha"><span>V</span><span>○</span></div>
+                        <div class="dia-racha"><span>S</span><span>○</span></div>
+                        <div class="dia-racha"><span>D</span><span>○</span></div>
+                    </div>
+                </div>
+
+                <section class="estadisticas" id="progreso">
+                    <article class="tarjeta">
+                        <span>Tareas completadas</span>
+                        <h3 id="totalCompletadas">0</h3>
+                        <p>Actividades terminadas</p>
+                    </article>
+
+                    <article class="tarjeta">
+                        <span>Tareas pendientes</span>
+                        <h3 id="totalPendientes">3</h3>
+                        <p>Actividades por realizar</p>
+                    </article>
+
+                    <article class="tarjeta">
+                        <span>Progreso de tareas</span>
+                        <h3 id="porcentaje">0%</h3>
+                        <div class="barra">
+                            <div id="barraProgreso"></div>
+                        </div>
+                    </article>
+                </section>
+                <section class="panel panel-rango" id="sistemaRangos">
+                    <h2>🏆 Mi rango de estudio</h2>
+                    <p>Aprende, completa actividades y asciende de rango.</p>
+
+                    <div class="rango-cabecera">
+                        <span id="iconoRango" class="icono-rango">🥉</span>
+                        <div>
+                            <p class="etiqueta">RANGO ACTUAL</p>
+                            <h3 id="nombreRango">Bronce I</h3>
+                            <p id="experienciaRango">0 XP</p>
+                        </div>
+                    </div>
+
+                    <div class="progreso-rango">
+                        <div class="progreso-rango-texto">
+                            <span id="textoSiguienteRango">Siguiente rango: Bronce II</span>
+                            <span id="xpRestante">0 / 100 XP</span>
+                        </div>
+                        <div class="barra-rango" role="progressbar" aria-label="Progreso hacia el siguiente rango"
+                            aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="contenedorBarraRango">
+                            <div id="barraRango"></div>
+                        </div>
+                    </div>
+
+                    <div class="estadisticas-rango">
+                        <article class="dato-rango">
+                            <span>⭐</span>
+                            <p>Experiencia total</p>
+                            <strong id="xpTotal">0 XP</strong>
+                        </article>
+
+                        <article class="dato-rango">
+                            <span>📚</span>
+                            <p>Cuestionarios completados</p>
+                            <strong id="quizzesCompletados">0</strong>
+                        </article>
+                    </div>
+
+                    <div class="consejo-rango">
+                        <h3 id="tituloConsejo">Tu misión de hoy</h3>
+                        <p id="consejoRango">
+                            Completa una tarea para comenzar a construir tu progreso.
+                        </p>
+                    </div>
+                </section>
+
+                <section class="panel" id="tareas">
+                    <h2>Mis tareas</h2>
+                    <p>Organiza las actividades que necesitas completar.</p>
+
+                    <form id="formTarea">
+                        <input type="text" id="nombreTarea" placeholder="Ej. Estudiar matemáticas"
+                            aria-label="Nombre de la nueva tarea" required>
+                        <button type="submit" class="boton">
+                            Añadir tarea
+                        </button>
+                    </form>
+
+                    <ul id="listaTareas" class="lista-tareas"></ul>
+                </section>
+
+                <section class="panel" id="apuntes">
+                    <h2>Mi biblioteca de estudio</h2>
+                    <p>
+                        Un espacio para organizar resúmenes y materiales
+                        de tus asignaturas.
+                    </p>
+
+                    <div class="biblioteca">
+                        <article class="recurso">
+                            <span class="icono">∑</span>
+                            <div>
+                                <h3>Matemáticas</h3>
+                                <p>Fórmulas y ejercicios</p>
+                            </div>
+                        </article>
+
+                        <article class="recurso">
+                            <span class="icono">◉</span>
+                            <div>
+                                <h3>Biología</h3>
+                                <p>Conceptos y resúmenes</p>
+                            </div>
+                        </article>
+
+                        <article class="recurso">
+                            <span class="icono">▤</span>
+                            <div>
+                                <h3>Historia</h3>
+                                <p>Lecturas y apuntes</p>
+                            </div>
+                        </article>
+                    </div>
+                    <button type="button" class="boton" id="abrirBiblioteca">
+                        📚 Explorar biblioteca de recursos
+                    </button>
+                </section>
+
+                <section class="panel" id="concentracion">
+                    <h2>Modo concentración</h2>
+                    <p>Dedica un tiempo a estudiar sin distracciones.</p>
+
+                    <div class="temporizador">
+                        <span id="reloj">25:00</span>
+                        <div class="controles">
+                            <button type="button" class="boton" id="iniciarTemporizador">
+                                Iniciar
+                            </button>
+                            <button type="button" class="boton secundario" id="reiniciarTemporizador">
+                                Reiniciar
+                            </button>
+                        </div>
+                </section>
+            </section>
+
+            <aside class="columna">
+                <section class="panel perfil">
+                    <div class="avatar">E</div>
+                    <h2>Mi espacio</h2>
+                    <p>Estudiante</p>
+                    <p class="nota">Tu progreso comienza con pequeños hábitos.</p>
+                </section>
+
+
+                <section class="panel" id="metaSemanal">
+                    <h2>Mi meta semanal</h2>
+                    <p>Completa 10 actividades de estudio cada semana.</p>
+
+                    <div class="barra">
+                        <div id="barraMeta"></div>
+                    </div>
+
+                    <p id="textoMeta">0 de 10 actividades completadas esta semana</p>
+                </section>
+
+                <section class="panel">
+                    <h2>Consejo de estudio</h2>
+                    <p>
+                        Divide una actividad difícil en pasos pequeños
+                        y empieza por el más sencillo.
+                    </p>
+                </section>
+            </aside>
+
+        </main>
+
+        <footer class="pie">
+            <p>StudyBoost © 2026 · Proyecto de investigación académica</p>
+        </footer>
+
+    </div>
+    <section class="panel" id="matematicas">
+        <h2>Aprende matemáticas</h2>
+        <p>Refuerza tus conocimientos con ejercicios interactivos y descubre cuánto has aprendido.</p>
+
+        <div class="temas-matematicas">
+            <span class="etiqueta-tema">Álgebra</span>
+            <span class="etiqueta-tema">Razonamiento</span>
+            <span class="etiqueta-tema">Nivel escolar</span>
+        </div>
+
+        <div class="quiz">
+            <div class="quiz-cabecera">
+                <span id="numeroPregunta">Pregunta 1 de 5</span>
+                <span id="puntuacionActual">Aciertos: 0</span>
+            </div>
+
+            <div class="barra quiz-barra">
+                <div id="progresoQuiz"></div>
+            </div>
+
+            <h3 id="preguntaTexto">Cargando pregunta...</h3>
+            <div id="opcionesQuiz" class="opciones-quiz"></div>
+            <p id="retroalimentacion" class="retroalimentacion" aria-live="polite"></p>
+
+            <button type="button" id="siguientePregunta" class="boton" hidden>
+                Siguiente pregunta
+            </button>
+
+            <div id="resultadoQuiz" hidden>
+                <h3>¡Cuestionario terminado!</h3>
+                <p id="resumenQuiz"></p>
+                <button type="button" id="reiniciarQuiz" class="boton">
+                    Intentar de nuevo
+                </button>
+            </div>
+        </div>
+    </section>
+    <div id="ventanaModal" class="modal" hidden>
+        <div class="modal-contenido">
+            <button type="button" id="cerrarModal" class="cerrar-modal" aria-label="Cerrar ventana">
+                &times;
+            </button>
+
+            <h2 id="tituloModal">StudyBoost</h2>
+            <div id="contenidoModal">
+                <p>¡Bienvenido a tu espacio de aprendizaje!</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
